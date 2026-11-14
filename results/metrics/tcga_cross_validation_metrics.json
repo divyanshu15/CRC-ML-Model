@@ -1,0 +1,95 @@
+{
+  "Stage_Only_Baseline": {
+    "ROC_AUC_OOF": 0.6355,
+    "ROC_AUC_CI95_Low": 0.4993,
+    "ROC_AUC_CI95_High": 0.7618
+  },
+  "Random_Forest": {
+    "ROC_AUC_OOF": 0.4261,
+    "ROC_AUC_CI95_Low": 0.2825,
+    "ROC_AUC_CI95_High": 0.5796,
+    "PR_AUC_OOF": 0.4516,
+    "DeLong_p_vs_Stage": 0.0298,
+    "CV_ROC_AUC_Mean": 0.4307,
+    "CV_ROC_AUC_Std": 0.0465,
+    "Balanced_Accuracy": 0.4384,
+    "Accuracy": 0.4386,
+    "Sensitivity": 0.4286,
+    "Specificity": 0.4483,
+    "Precision": 0.4286,
+    "F1_Score": 0.4286,
+    "Brier_Score": 0.3029,
+    "Confusion_Matrix": {
+      "TN": 13,
+      "FP": 16,
+      "FN": 16,
+      "TP": 12
+    }
+  },
+  "SVM_Linear": {
+    "ROC_AUC_OOF": 0.4126,
+    "ROC_AUC_CI95_Low": 0.2667,
+    "ROC_AUC_CI95_High": 0.5645,
+    "PR_AUC_OOF": 0.4355,
+    "DeLong_p_vs_Stage": 0.0235,
+    "CV_ROC_AUC_Mean": 0.4223,
+    "CV_ROC_AUC_Std": 0.0629,
+    "Balanced_Accuracy": 0.4384,
+    "Accuracy": 0.4386,
+    "Sensitivity": 0.4286,
+    "Specificity": 0.4483,
+    "Precision": 0.4286,
+    "F1_Score": 0.4286,
+    "Brier_Score": 0.3652,
+    "Confusion_Matrix": {
+      "TN": 13,
+      "FP": 16,
+      "FN": 16,
+      "TP": 12
+    }
+  },
+  "SVM_RBF": {
+    "ROC_AUC_OOF": 0.42,
+    "ROC_AUC_CI95_Low": 0.2778,
+    "ROC_AUC_CI95_High": 0.5757,
+    "PR_AUC_OOF": 0.4502,
+    "DeLong_p_vs_Stage": 0.0327,
+    "CV_ROC_AUC_Mean": 0.4459,
+    "CV_ROC_AUC_Std": 0.0739,
+    "Balanced_Accuracy": 0.4378,
+    "Accuracy": 0.4386,
+    "Sensitivity": 0.3929,
+    "Specificity": 0.4828,
+    "Precision": 0.4231,
+    "F1_Score": 0.4074,
+    "Brier_Score": 0.3501,
+    "Confusion_Matrix": {
+      "TN": 14,
+      "FP": 15,
+      "FN": 17,
+      "TP": 11
+    }
+  },
+  "XGBoost": {
+    "ROC_AUC_OOF": 0.3966,
+    "ROC_AUC_CI95_Low": 0.2532,
+    "ROC_AUC_CI95_High": 0.5445,
+    "PR_AUC_OOF": 0.4348,
+    "DeLong_p_vs_Stage": 0.0145,
+    "CV_ROC_AUC_Mean": 0.4183,
+    "CV_ROC_AUC_Std": 0.0639,
+    "Balanced_Accuracy": 0.4206,
+    "Accuracy": 0.4211,
+    "Sensitivity": 0.3929,
+    "Specificity": 0.4483,
+    "Precision": 0.4074,
+    "F1_Score": 0.4,
+    "Brier_Score": 0.3377,
+    "Confusion_Matrix": {
+      "TN": 13,
+      "FP": 16,
+      "FN": 17,
+      "TP": 11
+    }
+  }
+}

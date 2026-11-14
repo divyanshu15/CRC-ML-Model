@@ -1,0 +1,140 @@
+{
+  "pooled": {
+    "Stage_Only_Baseline": {
+      "ROC_AUC_OOF": 0.6799,
+      "ROC_AUC_CI95_Low": 0.6259,
+      "ROC_AUC_CI95_High": 0.7329,
+      "PR_AUC_OOF": 0.3119
+    },
+    "Random_Forest": {
+      "ROC_AUC_OOF": 0.6634,
+      "ROC_AUC_CI95_Low": 0.5916,
+      "ROC_AUC_CI95_High": 0.7309,
+      "PR_AUC_OOF": 0.3373,
+      "DeLong_p_vs_Stage": 0.6964,
+      "CV_ROC_AUC_Mean": 0.7987,
+      "CV_ROC_AUC_Std": 0.134,
+      "Balanced_Accuracy": 0.5596,
+      "Accuracy": 0.7444,
+      "Sensitivity": 0.2308,
+      "Specificity": 0.8885,
+      "Precision": 0.3673,
+      "F1_Score": 0.2835,
+      "Brier_Score": 0.1714,
+      "Confusion_Matrix": {
+        "TN": 247,
+        "FP": 31,
+        "FN": 60,
+        "TP": 18
+      }
+    },
+    "SVM_Linear": {
+      "ROC_AUC_OOF": 0.6466,
+      "ROC_AUC_CI95_Low": 0.5737,
+      "ROC_AUC_CI95_High": 0.713,
+      "PR_AUC_OOF": 0.3461,
+      "DeLong_p_vs_Stage": 0.4718,
+      "CV_ROC_AUC_Mean": 0.78,
+      "CV_ROC_AUC_Std": 0.1365,
+      "Balanced_Accuracy": 0.5871,
+      "Accuracy": 0.7584,
+      "Sensitivity": 0.2821,
+      "Specificity": 0.8921,
+      "Precision": 0.4231,
+      "F1_Score": 0.3385,
+      "Brier_Score": 0.1958,
+      "Confusion_Matrix": {
+        "TN": 248,
+        "FP": 30,
+        "FN": 56,
+        "TP": 22
+      }
+    },
+    "SVM_RBF": {
+      "ROC_AUC_OOF": 0.6233,
+      "ROC_AUC_CI95_Low": 0.55,
+      "ROC_AUC_CI95_High": 0.6919,
+      "PR_AUC_OOF": 0.3293,
+      "DeLong_p_vs_Stage": 0.22,
+      "CV_ROC_AUC_Mean": 0.7663,
+      "CV_ROC_AUC_Std": 0.1463,
+      "Balanced_Accuracy": 0.5961,
+      "Accuracy": 0.7725,
+      "Sensitivity": 0.2821,
+      "Specificity": 0.9101,
+      "Precision": 0.4681,
+      "F1_Score": 0.352,
+      "Brier_Score": 0.1924,
+      "Confusion_Matrix": {
+        "TN": 253,
+        "FP": 25,
+        "FN": 56,
+        "TP": 22
+      }
+    },
+    "XGBoost": {
+      "ROC_AUC_OOF": 0.6309,
+      "ROC_AUC_CI95_Low": 0.5574,
+      "ROC_AUC_CI95_High": 0.7005,
+      "PR_AUC_OOF": 0.3379,
+      "DeLong_p_vs_Stage": 0.2578,
+      "CV_ROC_AUC_Mean": 0.7659,
+      "CV_ROC_AUC_Std": 0.1276,
+      "Balanced_Accuracy": 0.5799,
+      "Accuracy": 0.7472,
+      "Sensitivity": 0.2821,
+      "Specificity": 0.8777,
+      "Precision": 0.3929,
+      "F1_Score": 0.3284,
+      "Brier_Score": 0.1935,
+      "Confusion_Matrix": {
+        "TN": 244,
+        "FP": 34,
+        "FN": 56,
+        "TP": 22
+      }
+    }
+  },
+  "per_held_out_cohort": [
+    {
+      "Held_Out_Cohort": "GSE39582",
+      "N": 249,
+      "Events": 56,
+      "Stage_Only_AUC": 0.6262,
+      "Random_Forest_AUC": 0.6119,
+      "SVM_Linear_AUC": 0.6203,
+      "SVM_RBF_AUC": 0.5968,
+      "XGBoost_AUC": 0.5907
+    },
+    {
+      "Held_Out_Cohort": "GSE14333",
+      "N": 64,
+      "Events": 15,
+      "Stage_Only_AUC": 0.7728,
+      "Random_Forest_AUC": 0.8639,
+      "SVM_Linear_AUC": 0.766,
+      "SVM_RBF_AUC": 0.7483,
+      "XGBoost_AUC": 0.8163
+    },
+    {
+      "Held_Out_Cohort": "GSE17536",
+      "N": 41,
+      "Events": 7,
+      "Stage_Only_AUC": 0.7899,
+      "Random_Forest_AUC": 0.9202,
+      "SVM_Linear_AUC": 0.9538,
+      "SVM_RBF_AUC": 0.9538,
+      "XGBoost_AUC": 0.8908
+    },
+    {
+      "Held_Out_Cohort": "GSE17537",
+      "N": 2,
+      "Events": 0,
+      "Stage_Only_AUC": NaN,
+      "Random_Forest_AUC": NaN,
+      "SVM_Linear_AUC": NaN,
+      "SVM_RBF_AUC": NaN,
+      "XGBoost_AUC": NaN
+    }
+  ]
+}

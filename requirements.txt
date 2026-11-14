@@ -1,0 +1,32 @@
+# Colorectal Cancer (CRC) Gene Expression ML Research Pipeline
+# Core Numerical & Data Manipulation
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0,<3.0.0
+scipy>=1.13.0,<1.15.0
+pyarrow>=14.0.0
+
+# Bioinformatics & Genomic Data Access
+GEOparse>=2.0.4
+mygene>=3.2.2
+gseapy>=1.1.0
+
+# Statistical Modeling & Survival Analysis
+statsmodels>=0.14.0
+lifelines>=0.28.0
+
+# Machine Learning & Model Interpretation
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+shap>=0.44.0
+joblib>=1.3.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Utilities & Environment
+requests>=2.31.0
+tqdm>=4.66.0
+ipykernel>=6.29.0
+notebook>=7.1.0
+streamlit>=1.35.0

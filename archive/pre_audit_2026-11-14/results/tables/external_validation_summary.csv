@@ -1,0 +1,5 @@
+,External_ROC_AUC,External_PR_AUC,Balanced_Accuracy,Accuracy,Sensitivity,Specificity,Precision,F1_Score,Brier_Score,Confusion_Matrix
+Random_Forest,0.6136,0.289,0.5,0.7656,0.0,1.0,0.0,0.0,0.1788,"{'TN': 49, 'FP': 0, 'FN': 15, 'TP': 0}"
+SVM_Linear,0.6762,0.354,0.5027,0.7344,0.0667,0.9388,0.25,0.1053,0.2006,"{'TN': 46, 'FP': 3, 'FN': 14, 'TP': 1}"
+SVM_RBF,0.6109,0.3542,0.5,0.7656,0.0,1.0,0.0,0.0,0.1999,"{'TN': 49, 'FP': 0, 'FN': 15, 'TP': 0}"
+XGBoost,0.619,0.3017,0.5,0.7656,0.0,1.0,0.0,0.0,0.1881,"{'TN': 49, 'FP': 0, 'FN': 15, 'TP': 0}"

@@ -1,0 +1,70 @@
+{
+  "Random_Forest": {
+    "External_ROC_AUC": 0.6136,
+    "External_PR_AUC": 0.289,
+    "Balanced_Accuracy": 0.5,
+    "Accuracy": 0.7656,
+    "Sensitivity": 0.0,
+    "Specificity": 1.0,
+    "Precision": 0.0,
+    "F1_Score": 0.0,
+    "Brier_Score": 0.1788,
+    "Confusion_Matrix": {
+      "TN": 49,
+      "FP": 0,
+      "FN": 15,
+      "TP": 0
+    }
+  },
+  "SVM_Linear": {
+    "External_ROC_AUC": 0.6762,
+    "External_PR_AUC": 0.354,
+    "Balanced_Accuracy": 0.5027,
+    "Accuracy": 0.7344,
+    "Sensitivity": 0.0667,
+    "Specificity": 0.9388,
+    "Precision": 0.25,
+    "F1_Score": 0.1053,
+    "Brier_Score": 0.2006,
+    "Confusion_Matrix": {
+      "TN": 46,
+      "FP": 3,
+      "FN": 14,
+      "TP": 1
+    }
+  },
+  "SVM_RBF": {
+    "External_ROC_AUC": 0.6109,
+    "External_PR_AUC": 0.3542,
+    "Balanced_Accuracy": 0.5,
+    "Accuracy": 0.7656,
+    "Sensitivity": 0.0,
+    "Specificity": 1.0,
+    "Precision": 0.0,
+    "F1_Score": 0.0,
+    "Brier_Score": 0.1999,
+    "Confusion_Matrix": {
+      "TN": 49,
+      "FP": 0,
+      "FN": 15,
+      "TP": 0
+    }
+  },
+  "XGBoost": {
+    "External_ROC_AUC": 0.619,
+    "External_PR_AUC": 0.3017,
+    "Balanced_Accuracy": 0.5,
+    "Accuracy": 0.7656,
+    "Sensitivity": 0.0,
+    "Specificity": 1.0,
+    "Precision": 0.0,
+    "F1_Score": 0.0,
+    "Brier_Score": 0.1881,
+    "Confusion_Matrix": {
+      "TN": 49,
+      "FP": 0,
+      "FN": 15,
+      "TP": 0
+    }
+  }
+}
