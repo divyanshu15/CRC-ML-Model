@@ -12,6 +12,8 @@
 
 ---
 
+📄 **Research paper:** [paper/CRC_early_recurrence_paper.pdf](paper/CRC_early_recurrence_paper.pdf) (HTML source and figure script in [`paper/`](paper/)).
+
 ## ⚠️ Revised Results (audit of 14 November 2026)
 
 An audit of the pipeline found problems that changed the reported numbers. Everything in this README has been regenerated from the corrected code; the previous code, results and documents are kept in `archive/pre_audit_2026-11-14/`.

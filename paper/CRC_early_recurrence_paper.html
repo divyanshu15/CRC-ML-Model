@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gene-Expression Machine Learning for Early Recurrence in Stage I–III Colorectal Cancer: A Leakage-Controlled, Multi-Cohort Evaluation Against TNM Stage</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm 20mm 18mm; }
+  :root { --ink:#111827; --muted:#4b5563; --rule:#d1d5db; --accent:#1e3a8a; --tint:#f3f4f6; }
+  html { font-size: 10.6pt; }
+  body { font-family: "Charter", "Georgia", "Times New Roman", serif; color: var(--ink); line-height: 1.45; max-width: 178mm; margin: 0 auto; padding: 8mm 0; }
+  h1 { font-size: 1.62rem; line-height: 1.25; text-align: center; margin: 0 0 .6rem; color: var(--accent); }
+  .authors { text-align: center; font-size: 1.02rem; margin-bottom: .15rem; }
+  .affil { text-align: center; color: var(--muted); font-size: .9rem; margin-bottom: .9rem; }
+  .meta { text-align:center; color: var(--muted); font-size:.85rem; margin-bottom: 1.1rem; }
+  .abstract { border-top: 2px solid var(--accent); border-bottom: 1px solid var(--rule); padding: .7rem .2rem .6rem; margin-bottom: .9rem; }
+  .abstract h2 { margin-top: 0; }
+  .abstract p { margin: .32rem 0; text-align: justify; }
+  .kw { font-size: .92rem; margin-top: .5rem; }
+  h2 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 1.12rem; color: var(--accent); margin: 1.25rem 0 .45rem; border-bottom: 1px solid var(--rule); padding-bottom: .15rem; break-after: avoid; }
+  h3 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: .98rem; margin: .95rem 0 .3rem; break-after: avoid; }
+  p { margin: .45rem 0; text-align: justify; hyphens: auto; }
+  ul, ol { margin: .35rem 0 .5rem 1.3rem; padding: 0; }
+  li { margin: .18rem 0; }
+  table { border-collapse: collapse; width: 100%; font-family: "Helvetica Neue", Arial, sans-serif; font-size: .8rem; margin: .5rem 0 .25rem; break-inside: avoid; }
+  th, td { padding: .24rem .4rem; text-align: center; border-bottom: 1px solid var(--rule); }
+  th { border-top: 1.5px solid var(--ink); border-bottom: 1px solid var(--ink); background: var(--tint); }
+  td:first-child, th:first-child { text-align: left; }
+  tr.base td { font-weight: 600; background: #eef2ff; }
+  tr.sep td { border-top: 1.2px solid #9ca3af; }
+  .tcap, .fcap { font-family: "Helvetica Neue", Arial, sans-serif; font-size: .8rem; color: #1f2937; margin: .2rem 0 .8rem; text-align: left; }
+  .tcap { margin-top: .9rem; }
+  .tblock { break-inside: avoid; page-break-inside: avoid; }
+  .tcap b, .fcap b { color: var(--accent); }
+  .tnote { font-family: "Helvetica Neue", Arial, sans-serif; font-size: .74rem; color: var(--muted); margin: 0 0 .9rem; }
+  figure { margin: .8rem 0 .9rem; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; border: 1px solid #e5e7eb; }
+  figure.half img { max-width: 72%; }
+  figcaption { font-family: "Helvetica Neue", Arial, sans-serif; font-size: .8rem; text-align: left; margin-top: .3rem; }
+  figcaption b { color: var(--accent); }
+  .box { background: #f8fafc; border-left: 3px solid var(--accent); padding: .45rem .7rem; margin: .7rem 0; }
+  .refs li { font-size: .84rem; margin: .2rem 0; text-align: left; }
+  a { color: #1d4ed8; text-decoration: none; word-break: break-word; }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: .82em; background: #f3f4f6; padding: 0 .2em; border-radius: 2px; }
+  .small { font-size: .85rem; }
+  .pagebreak { break-before: page; }
+  sup { font-size: .7em; }
+</style>
+</head>
+<body>
+
+<h1>Gene-Expression Machine Learning for Early Recurrence in Stage I–III Colorectal Cancer: A Leakage-Controlled, Multi-Cohort Evaluation Against TNM Stage</h1>
+<div class="authors">Divyanshu Singh</div>
+<div class="affil">M.Tech Research Project, Bioinformatics &amp; Machine Learning &middot; [Department, Institution] &middot; Supervisor: [Name]</div>
+<div class="meta">Manuscript draft &middot; November 2026 &middot; Code: <a href="https://github.com/divyanshu15/CRC-ML-Model">github.com/divyanshu15/CRC-ML-Model</a></div>
+
+<div class="abstract">
+<h2>Abstract</h2>
+<p><b>Background.</b> Recurrence after curative resection of Stage I–III colorectal cancer (CRC) is poorly predicted by TNM stage, and many published transcriptomic classifiers report optimistic accuracy because of information leakage or missing clinical baselines. We asked whether gene expression predicts early recurrence <i>beyond</i> stage when evaluated under strict leakage control and independent external validation.</p>
+<p><b>Methods.</b> Using GSE39582 (Affymetrix GPL570) as the discovery cohort, we defined early recurrence as relapse within 12 months and the comparator as disease-free follow-up of at least 60 months, excluding intermediate and ambiguous cases (n = 249; 56 vs 193). Random Forest, linear and RBF support vector machines, and XGBoost were trained with all feature selection, scaling, hyperparameter tuning and threshold selection confined to training folds (5 × 5 repeated nested cross-validation), each in a gene-only and a gene-plus-stage form, and compared with TNM stage alone using bootstrap confidence intervals and DeLong tests. Frozen models were evaluated in GSE14333 (binary n = 64; disease-free survival n = 226) and GSE17536 (survival n = 135) after label-free per-gene alignment. Secondary analyses comprised an XGBoost-Cox survival model on all 485 Stage I–III discovery tumours, a four-cohort leave-one-cohort-out benchmark, TCGA-COADREAD, and a paired primary–liver-metastasis RNA-seq cohort (GSE50760).</p>
+<p><b>Results.</b> No gene-expression model discriminated early recurrence better than stage. Internal nested-CV ROC-AUC was 0.51–0.54 versus 0.626 for stage; external AUC in GSE14333 was 0.70–0.77 versus 0.773 for stage (all DeLong p ≥ 0.44). No gene reached a false-discovery rate below 0.10. However, frozen classifier risk scores were prognostic for disease-free survival independently of stage in both external cohorts: stage-adjusted hazard ratios per standard deviation were 1.35–1.48 in GSE14333 (p = 0.001–0.008, 8/8 models) and 1.30–1.63 in GSE17536 (p &lt; 0.05 for 6/8 models). A survival-trained XGBoost-Cox model added to stage internally (likelihood-ratio p = 0.013) and in GSE14333 (HR 1.51) but not in GSE17536 (HR 1.02). After adjusting for normal-liver admixture, no gene differed significantly between metastases and matched primaries.</p>
+<p><b>Conclusions.</b> Under rigorous evaluation, expression-based models do not replace TNM stage for predicting early recurrence, but their risk scores carry reproducible, stage-independent prognostic information across two independent cohorts. The audit also documents four data-quality pitfalls—normal tissue hidden in a tumour series, cross-cohort normalisation shift, endpoint drift in pooled analyses, and liver admixture in metastasis biopsies—each of which materially changed conclusions.</p>
+<p class="kw"><b>Keywords:</b> colorectal cancer; recurrence; gene expression; machine learning; nested cross-validation; external validation; TNM stage; survival analysis; data leakage</p>
+</div>
+
+<h2>1. Introduction</h2>
+<p>Colorectal cancer is among the most commonly diagnosed cancers and a leading cause of cancer death worldwide [23]. Most patients present with localised (Stage I–III) disease and undergo curative resection, yet a substantial minority relapse, most often within the first two to three years. Patients who relapse within the first year represent a particularly aggressive group. Adjuvant chemotherapy decisions rest mainly on TNM stage, which captures anatomical spread but not tumour biology; patients with the same stage can have very different outcomes.</p>
+<p>Gene-expression profiling has therefore been widely explored for recurrence prediction, and multigene assays have been developed for Stage II–III colon cancer [24, 25]. Public microarray cohorts such as GSE39582 [1], GSE14333 [2] and GSE17536/GSE17537 [3] make it possible to build and test such models. However, high-dimensional settings (≈20,000 genes, a few hundred patients) are notoriously prone to optimistic error estimates when gene selection or tuning is performed outside cross-validation [17, 18], and many reports do not compare their models with the clinical variables already used in practice.</p>
+<p>This study had three aims: (i) to build machine-learning classifiers for early (≤ 12-month) recurrence in Stage I–III CRC under strict leakage control; (ii) to judge them against TNM stage alone, internally and in independent cohorts; and (iii) to test whether any expression signal is <i>additive</i> to stage. During the work, an audit of an earlier version of the pipeline uncovered several data and methodological problems; we report the corrected analysis and describe those problems because they are instructive for similar projects.</p>
+
+<h2>2. Materials and Methods</h2>
+
+<h3>2.1 Data sources</h3>
+<p>All data are publicly available. Microarray series matrices (submitter-processed, log<sub>2</sub> scale) and platform annotation were downloaded from NCBI GEO [8]; TCGA data from the UCSC Xena TCGA hub [7]. Raw CEL or FASTQ files were not used. Table 1 lists each dataset, its role and the exact download location.</p>
+
+<div class="tblock"><p class="tcap"><b>Table 1.</b> Datasets, roles and download links.</p>
+<table>
+<tr><th>Dataset</th><th>Platform</th><th>Role in this study</th><th>Samples used</th><th>Download</th></tr>
+<tr><td>GSE39582 [1]</td><td>Affymetrix HG-U133 Plus 2.0 (GPL570)</td><td>Discovery: training, nested CV</td><td>585 in series; 249 binary; 485 survival</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE39582">GEO page</a> · <a href="https://ftp.ncbi.nlm.nih.gov/geo/series/GSE39nnn/GSE39582/matrix/GSE39582_series_matrix.txt.gz">series matrix</a></td></tr>
+<tr><td>GSE14333 [2]</td><td>GPL570</td><td>External validation (binary + survival)</td><td>290 in series; 64 binary; 226 survival</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE14333">GEO page</a> · <a href="https://ftp.ncbi.nlm.nih.gov/geo/series/GSE14nnn/GSE14333/matrix/GSE14333_series_matrix.txt.gz">series matrix</a></td></tr>
+<tr><td>GSE17536 [3]</td><td>GPL570</td><td>External survival validation; LOCO</td><td>177 in series; 135 survival</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE17536">GEO page</a> · <a href="https://ftp.ncbi.nlm.nih.gov/geo/series/GSE17nnn/GSE17536/matrix/GSE17536_series_matrix.txt.gz">series matrix</a></td></tr>
+<tr><td>GSE17537 [3]</td><td>GPL570</td><td>LOCO benchmark only</td><td>55 in series; 2 binary</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE17537">GEO page</a> · <a href="https://ftp.ncbi.nlm.nih.gov/geo/series/GSE17nnn/GSE17537/matrix/GSE17537_series_matrix.txt.gz">series matrix</a></td></tr>
+<tr><td>GPL570 annotation</td><td>—</td><td>Probe → gene symbol mapping</td><td>54,675 probesets</td><td><a href="https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL570/annot/GPL570.annot.gz">GPL570.annot.gz</a></td></tr>
+<tr><td>GSE50760 [4]</td><td>Illumina HiSeq 2000 (GPL11154), FPKM</td><td>Paired metastasis analysis</td><td>18 patients × (normal, primary, liver metastasis)</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE50760">GEO page</a> · <a href="https://ftp.ncbi.nlm.nih.gov/geo/series/GSE50nnn/GSE50760/suppl/GSE50760_RAW.tar">GSE50760_RAW.tar</a></td></tr>
+<tr><td>TCGA-COAD / READ [6]</td><td>Illumina HiSeq V2 (log<sub>2</sub> norm. counts)</td><td>Secondary RNA-seq check</td><td>306 Stage I–III; 57 curated</td><td>Expression: <a href="https://tcga-xena-hub.s3.us-east-1.amazonaws.com/download/TCGA.COAD.sampleMap%2FHiSeqV2.gz">COAD</a>, <a href="https://tcga-xena-hub.s3.us-east-1.amazonaws.com/download/TCGA.READ.sampleMap%2FHiSeqV2.gz">READ</a>; clinical: <a href="https://tcga-xena-hub.s3.us-east-1.amazonaws.com/download/TCGA.COAD.sampleMap%2FCOAD_clinicalMatrix">COAD</a>, <a href="https://tcga-xena-hub.s3.us-east-1.amazonaws.com/download/TCGA.READ.sampleMap%2FREAD_clinicalMatrix">READ</a>; survival (PFI [5]): <a href="https://tcga-xena-hub.s3.us-east-1.amazonaws.com/download/survival%2FCOAD_survival.txt">COAD</a>, <a href="https://tcga-xena-hub.s3.us-east-1.amazonaws.com/download/survival%2FREAD_survival.txt">READ</a></td></tr>
+</table>
+<p class="tnote">All links were checked on 14 November 2026. LOCO, leave-one-cohort-out; PFI, progression-free interval.</p></div>
+
+<h3>2.2 Clinical endpoints and cohort curation</h3>
+<p><b>Binary endpoint.</b> Class 1 (early recurrence): documented relapse within 12 months of resection. Class 0: no relapse with at least 60 months of follow-up. Patients with relapse after 12 months, relapse-free follow-up shorter than 60 months, or missing relapse status were excluded rather than imputed, to avoid label noise. The same rule was applied to every cohort (relapse-free survival in GSE39582; disease-free survival in GSE14333/17536/17537; PFI in TCGA).</p>
+<p><b>Inclusion.</b> Stage I–III primary tumours only (Dukes A–C in GSE14333). GSE39582 contains 19 non-tumoral mucosa samples (<code>dataset = "Non Tumoral"</code>), each linked to a tumour from the same patient; these were excluded. From 585 GSE39582 samples, 336 were excluded (19 non-tumoral, 64 Stage IV or unknown stage, 84 late relapse, 160 insufficient follow-up, 9 missing relapse status), leaving 249 (Figure 1).</p>
+<p><b>Survival cohort.</b> For survival analyses, all Stage I–III tumours with follow-up were used (GSE39582 n = 485, 137 RFS events; GSE14333 n = 226, 50 DFS events; GSE17536 n = 135, 32 DFS events).</p>
+
+<figure>
+<img src="figures/fig_study_design.png" alt="Study design">
+<figcaption><b>Figure 1.</b> Study design. Discovery data come from GSE39582; frozen models are evaluated in independent cohorts after label-free alignment. All selection, tuning and threshold steps occur inside training folds.</figcaption>
+</figure>
+
+<h3>2.3 Expression preprocessing</h3>
+<p>GPL570 probesets were mapped to HGNC symbols using the GEO annotation (first symbol for multi-gene probes; Affymetrix control probes removed), and each gene was represented by its most variable probeset, giving 21,755 genes. Values were stored as float32 Parquet matrices. Probe collapse is unsupervised and uses no outcome information.</p>
+
+<h3>2.4 Fold-isolated feature selection</h3>
+<p>Within each training fold: (1) the 50% most variable genes were retained; (2) the 150 genes with the smallest Welch t-test p-values (Class 1 vs Class 0) were kept; (3) an L1-penalised logistic regression (C = 0.15, balanced class weights) ranked these, and the top <i>k</i> non-zero genes (<i>k</i> = 15 or 35, tuned) were used. For "genes + stage" models, stage was excluded from screening and appended as a feature. Genes were then standardised with training-fold statistics.</p>
+
+<h3>2.5 Classifiers</h3>
+<p>Four classifiers were used: Random Forest [9], support vector machines with linear and RBF kernels [10], and XGBoost [11], implemented with scikit-learn [12] and xgboost. Class imbalance was handled with balanced class weights or <code>scale_pos_weight</code>. Hyperparameter grids: RF maximum depth {3, 6} × minimum leaf size {3, 10}; linear SVM C {0.01, 0.1, 1}; RBF SVM C {0.3, 1, 3}; XGBoost depth {2, 3} × learning rate {0.03, 0.1}; each combined with <i>k</i> ∈ {15, 35}.</p>
+
+<h3>2.6 Validation design</h3>
+<p><b>Repeated nested cross-validation.</b> Five repeats of stratified 5-fold outer CV. Within every outer training fold, a 3-fold inner GridSearchCV (ROC-AUC) selected hyperparameters and <i>k</i>, and the decision threshold was set by Youden's J [16] on inner cross-validated predictions. Out-of-fold probabilities were averaged across repeats. Gene-selection frequency across the 25 outer folds was recorded as a stability measure.</p>
+<p><b>Clinical baseline.</b> TNM stage (I/II/III) was used directly as an ordinal risk score. Every model was compared with it using bootstrap 95% CIs (2,000 resamples) and the paired DeLong test [13].</p>
+<p><b>Final models.</b> Deployed models were tuned by 5-fold GridSearchCV on the full discovery cohort, with the threshold chosen from 5-fold cross-validated predictions. Models and thresholds were frozen before external evaluation.</p>
+
+<h3>2.7 External validation and cross-cohort alignment</h3>
+<p>External cohorts were processed with the same probe mapping. Because each GEO series was normalised separately (the median gene level in GSE14333 was ≈0.5 log<sub>2</sub> units below GSE39582), each external gene was location/scale-matched to the discovery training distribution, <i>x′ = (x − μ<sub>ext</sub>)/σ<sub>ext</sub> · σ<sub>train</sub> + μ<sub>train</sub></i>, using the external cohort's own unlabelled Stage I–III samples. No external outcome was used for alignment, tuning or thresholds; unaligned results are reported as a sensitivity analysis. Binary performance was assessed in GSE14333 (n = 64). Survival was assessed in all Stage I–III patients of GSE14333 and GSE17536 using Harrell's C-index [15] and a Cox model [21] of disease-free survival on the standardised risk score adjusted for stage.</p>
+
+<h3>2.8 Survival model</h3>
+<p>To use every Stage I–III discovery tumour, we trained XGBoost with the <code>survival:cox</code> objective on GSE39582 (n = 485). Inside each training fold, genes were filtered by variance and ranked by absolute correlation with null-model martingale residuals [22]; 50 or 150 genes were kept. Depth {2, 3} and learning rate {0.02, 0.05} were tuned with the same 5 × 5 nested scheme, scoring the C-index. Added value over stage was tested with a likelihood-ratio test of Cox(stage + score) versus Cox(stage). The frozen model and a discovery-median risk cut-off were applied to both external cohorts.</p>
+
+<h3>2.9 Secondary analyses</h3>
+<p><b>Leave-one-cohort-out (LOCO).</b> GSE39582, GSE14333, GSE17536 and GSE17537 were pooled under the curated endpoint (n = 356). Each cohort was gene-wise standardised on its own Stage I–III samples, and each was predicted by models tuned and trained on the others. <b>TCGA-COADREAD.</b> The curated endpoint was applied to PFI [5]; with only 57 eligible patients, fixed hyperparameters and 10 × repeated 5-fold CV were used. <b>Differential expression.</b> Welch t-tests with Benjamini–Hochberg FDR [14] compared Class 1 vs Class 0 in GSE39582 (descriptive only; not used for model selection). <b>Metastasis (GSE50760).</b> Log<sub>2</sub>(FPKM+1) values were compared between paired liver metastases and primaries. A liver-admixture score (mean expression of 30 hepatocyte-specific genes such as ALB, APOA1, FGA/FGB/FGG, SERPINA1 and CYP2E1) was computed per sample; for each gene, the within-patient difference was regressed on the pair's excess liver score, and the intercept estimated the metastasis effect at zero admixture.</p>
+
+<h3>2.10 Software and reproducibility</h3>
+<p>Python 3.10 with scikit-learn [12], xgboost [11], lifelines [20], SciPy, statsmodels, SHAP [19] and pandas/pyarrow, on an Apple M4 laptop (16 GB). All random seeds were fixed (42). The full pipeline, results tables and an interactive Streamlit dashboard are in the public repository (Code availability).</p>
+
+<h2>3. Results</h2>
+
+<h3>3.1 Cohort characteristics</h3>
+<div class="tblock"><p class="tcap"><b>Table 2.</b> Characteristics of the analysed cohorts.</p>
+<table>
+<tr><th>Cohort</th><th>n</th><th>Events</th><th>Median age (y)</th><th>Male, %</th><th>Stage I / II / III</th><th>Median follow-up (mo)</th></tr>
+<tr><td>GSE39582 binary</td><td>249</td><td>56 early relapses</td><td>68</td><td>51.4</td><td>15 / 134 / 100</td><td>—</td></tr>
+<tr><td>GSE39582 survival</td><td>485</td><td>137 RFS</td><td>69</td><td>55.7</td><td>32 / 253 / 200</td><td>50.0</td></tr>
+<tr><td>GSE14333 survival</td><td>226</td><td>50 DFS</td><td>67</td><td>53.1</td><td>41 / 94 / 91</td><td>38.5</td></tr>
+<tr><td>GSE14333 binary</td><td>64</td><td>15 early relapses</td><td colspan="4">subset of the survival cohort</td></tr>
+<tr><td>GSE17536 survival</td><td>135</td><td>32 DFS</td><td>67</td><td>51.9</td><td>24 / 55 / 56</td><td>38.1</td></tr>
+<tr><td>TCGA-COADREAD curated</td><td>57</td><td>28 early PFI events</td><td colspan="2">—</td><td>6 / 26 / 25</td><td>—</td></tr>
+</table>
+<p class="tnote">In the GSE39582 binary cohort no Stage I patient relapsed early; early relapse occurred in 24/134 Stage II and 32/100 Stage III patients.</p></div>
+
+<h3>3.2 Single-gene differential expression</h3>
+<p>Among 21,755 genes, 1,144 had nominal p &lt; 0.05, 218 p &lt; 0.01 and 28 p &lt; 0.001 between early-relapse and long-term disease-free tumours, but none reached FDR &lt; 0.10 (lowest q = 0.15; <i>COCH</i> and <i>DMRT2</i>). Other leading candidates included <i>SPACA3</i>, <i>UBD</i>, <i>KLK10</i>, <i>MSLN</i> and <i>KLK6</i> (Figure 2). These genes are hypotheses rather than established biomarkers.</p>
+<figure class="half">
+<img src="figures/fig_volcano.png" alt="Volcano plot">
+<figcaption><b>Figure 2.</b> Differential expression between early relapse (n = 56) and long-term disease-free (n = 193) tumours in GSE39582. Coloured points pass nominal p &lt; 0.01 and |log<sub>2</sub>FC| ≥ 0.3; no gene is FDR-significant.</figcaption>
+</figure>
+
+<h3>3.3 Internal performance (repeated nested cross-validation)</h3>
+<p>With tuning confined to training folds, all models performed close to chance (ROC-AUC 0.507–0.539), while stage alone reached 0.626 (Table 3; Figure 3). Stage was significantly better than the RBF SVM variants (DeLong p = 0.023 and 0.046) and numerically better than all others (p = 0.06–0.09). Adding stage as a feature did not recover stage-level performance, because it competes with 15–35 noisy gene features. Calibration curves were flat around the 22.5% prevalence. Gene selection was unstable: only 2–6 genes per model were selected in at least half of the 25 outer folds (most stable: <i>EPSTI1</i>, 84%). An earlier version of the pipeline with hand-set hyperparameters reported AUC 0.53–0.59, illustrating the optimism that untested tuning choices can introduce.</p>
+
+<div class="tblock"><p class="tcap"><b>Table 3.</b> Internal discrimination in GSE39582 (n = 249; 5 × 5 repeated nested CV).</p>
+<table>
+<tr><th>Model</th><th>ROC-AUC (95% CI)</th><th>Mean ± SD over repeats</th><th>PR-AUC</th><th>DeLong p vs stage</th><th>Sens.*</th><th>Spec.*</th><th>Brier</th></tr>
+<tr class="base"><td>Stage only</td><td>0.626 (0.557–0.697)</td><td>—</td><td>0.285<sup>†</sup></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Random Forest</td><td>0.537 (0.451–0.625)</td><td>0.521 ± 0.026</td><td>0.241</td><td>0.089</td><td>0.429</td><td>0.611</td><td>0.193</td></tr>
+<tr><td>SVM (linear)</td><td>0.523 (0.435–0.611)</td><td>0.515 ± 0.041</td><td>0.229</td><td>0.059</td><td>0.518</td><td>0.560</td><td>0.204</td></tr>
+<tr><td>SVM (RBF)</td><td>0.507 (0.422–0.594)</td><td>0.510 ± 0.022</td><td>0.218</td><td>0.023</td><td>0.643</td><td>0.472</td><td>0.208</td></tr>
+<tr><td>XGBoost</td><td>0.526 (0.438–0.613)</td><td>0.513 ± 0.028</td><td>0.236</td><td>0.065</td><td>0.429</td><td>0.534</td><td>0.199</td></tr>
+<tr class="sep"><td>Random Forest + stage</td><td>0.536 (0.448–0.624)</td><td>0.521 ± 0.015</td><td>0.243</td><td>0.082</td><td>0.482</td><td>0.591</td><td>0.196</td></tr>
+<tr><td>SVM (linear) + stage</td><td>0.539 (0.452–0.626)</td><td>0.528 ± 0.031</td><td>0.237</td><td>0.087</td><td>0.607</td><td>0.461</td><td>0.201</td></tr>
+<tr><td>SVM (RBF) + stage</td><td>0.528 (0.441–0.613)</td><td>0.526 ± 0.012</td><td>0.236</td><td>0.046</td><td>0.607</td><td>0.461</td><td>0.201</td></tr>
+<tr><td>XGBoost + stage</td><td>0.529 (0.440–0.616)</td><td>0.520 ± 0.027</td><td>0.241</td><td>0.075</td><td>0.429</td><td>0.539</td><td>0.196</td></tr>
+</table>
+<p class="tnote">*At the threshold tuned inside each training fold. <sup>†</sup>Average precision (trapezoidal PR-AUC over-interpolates a three-level score). Prevalence 22.5%.</p></div>
+
+<figure>
+<img src="figures/fig_internal_roc.png" alt="Internal ROC" style="max-width:49%"> <img src="figures/fig_calibration.png" alt="Calibration" style="max-width:43%">
+<figcaption><b>Figure 3.</b> Left: repeat-averaged out-of-fold ROC curves in GSE39582. Right: calibration of out-of-fold probabilities (quantile bins).</figcaption>
+</figure>
+
+<h3>3.4 External binary validation (GSE14333)</h3>
+<p>Frozen gene-only models reached ROC-AUC 0.705–0.748 and gene-plus-stage models 0.744–0.773, against 0.773 for stage alone (Table 4; Figure 4). No model differed significantly from stage (DeLong p ≥ 0.44), and the 95% CIs were wide (15 events). Without alignment, AUC was lower (by up to 0.11) and, at a 0.50 threshold, sensitivity was 0.07–0.33; with the frozen discovery thresholds, sensitivity was 0.53–0.93.</p>
+
+<div class="tblock"><p class="tcap"><b>Table 4.</b> External binary discrimination in GSE14333 (n = 64; 15 early relapses).</p>
+<table>
+<tr><th>Model</th><th>ROC-AUC (95% CI)</th><th>DeLong p vs stage</th><th>AUC unaligned</th><th>Frozen threshold</th><th>Sens.</th><th>Spec.</th><th>Sens. at 0.50</th></tr>
+<tr class="base"><td>Stage only</td><td>0.773 (0.675–0.855)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Random Forest</td><td>0.748 (0.606–0.869)</td><td>0.77</td><td>0.705</td><td>0.31</td><td>0.600</td><td>0.755</td><td>0.067</td></tr>
+<tr><td>SVM (linear)</td><td>0.739 (0.590–0.864)</td><td>0.69</td><td>0.717</td><td>0.27</td><td>0.533</td><td>0.755</td><td>0.200</td></tr>
+<tr><td>SVM (RBF)</td><td>0.705 (0.556–0.837)</td><td>0.44</td><td>0.595</td><td>0.08</td><td>0.867</td><td>0.449</td><td>0.200</td></tr>
+<tr><td>XGBoost</td><td>0.740 (0.600–0.862)</td><td>0.69</td><td>0.675</td><td>0.18</td><td>0.600</td><td>0.694</td><td>0.267</td></tr>
+<tr class="sep"><td>Random Forest + stage</td><td>0.757 (0.615–0.881)</td><td>0.84</td><td>0.735</td><td>0.37</td><td>0.733</td><td>0.653</td><td>0.200</td></tr>
+<tr><td>SVM (linear) + stage</td><td>0.744 (0.593–0.869)</td><td>0.72</td><td>0.703</td><td>0.08</td><td>0.933</td><td>0.265</td><td>0.133</td></tr>
+<tr><td>SVM (RBF) + stage</td><td>0.757 (0.612–0.876)</td><td>0.83</td><td>0.646</td><td>0.11</td><td>0.800</td><td>0.592</td><td>0.200</td></tr>
+<tr><td>XGBoost + stage</td><td>0.773 (0.629–0.895)</td><td>1.00</td><td>0.729</td><td>0.09</td><td>0.667</td><td>0.735</td><td>0.333</td></tr>
+</table></div>
+
+<figure class="half">
+<img src="figures/fig_external_roc.png" alt="External ROC">
+<figcaption><b>Figure 4.</b> External ROC curves in GSE14333 (n = 64) for frozen gene-only models, with the stage-only baseline (dash-dot).</figcaption>
+</figure>
+
+<h3>3.5 Prognostic value beyond stage in two external cohorts</h3>
+<p>Applied to every Stage I–III patient with follow-up, the frozen classifier risk scores predicted disease-free survival after adjustment for stage in both independent cohorts (Table 5; Figure 5). In GSE14333 all eight models were significant (HR per SD 1.35–1.48, p = 0.001–0.008). In GSE17536, which was never used for any modelling decision, six of eight were significant (HR 1.30–1.63); the linear SVM gave HR 1.59 (95% CI 1.20–2.12, p = 0.002), and the stage-combined SVMs slightly exceeded stage alone in C-index (0.676 vs 0.657). A median split of the pre-specified linear SVM score separated DFS in GSE14333 (log-rank p = 3.6 × 10<sup>−3</sup>; Figure 6).</p>
+
+<div class="tblock"><p class="tcap"><b>Table 5.</b> External disease-free survival: C-index and stage-adjusted Cox hazard ratio per SD of the frozen risk score.</p>
+<table>
+<tr><th rowspan="2">Model</th><th colspan="2">GSE14333 (n = 226, 50 events)</th><th colspan="2">GSE17536 (n = 135, 32 events)</th></tr>
+<tr><th>C-index</th><th>HR (95% CI), p</th><th>C-index</th><th>HR (95% CI), p</th></tr>
+<tr class="base"><td>Stage only</td><td>0.675</td><td>—</td><td>0.657</td><td>—</td></tr>
+<tr><td>Random Forest</td><td>0.628</td><td>1.43 (1.12–1.83), 0.004</td><td>0.606</td><td>1.40 (1.01–1.94), 0.045</td></tr>
+<tr><td>SVM (linear)</td><td>0.630</td><td>1.47 (1.17–1.86), 0.001</td><td>0.653</td><td>1.59 (1.20–2.12), 0.002</td></tr>
+<tr><td>SVM (RBF)</td><td>0.625</td><td>1.35 (1.08–1.68), 0.008</td><td>0.651</td><td>1.54 (1.16–2.04), 0.003</td></tr>
+<tr><td>XGBoost</td><td>0.629</td><td>1.38 (1.11–1.72), 0.004</td><td>0.610</td><td>1.33 (0.99–1.78), 0.055</td></tr>
+<tr class="sep"><td>Random Forest + stage</td><td>0.636</td><td>1.48 (1.14–1.92), 0.004</td><td>0.618</td><td>1.47 (1.03–2.09), 0.033</td></tr>
+<tr><td>SVM (linear) + stage</td><td>0.643</td><td>1.43 (1.12–1.83), 0.004</td><td>0.676</td><td>1.63 (1.21–2.21), 0.001</td></tr>
+<tr><td>SVM (RBF) + stage</td><td>0.650</td><td>1.35 (1.08–1.68), 0.007</td><td>0.676</td><td>1.55 (1.17–2.06), 0.002</td></tr>
+<tr><td>XGBoost + stage</td><td>0.618</td><td>1.40 (1.14–1.71), 0.001</td><td>0.593</td><td>1.30 (0.98–1.72), 0.069</td></tr>
+</table></div>
+
+<figure>
+<img src="figures/fig_forest_survival.png" alt="Forest plot">
+<figcaption><b>Figure 5.</b> Stage-adjusted hazard ratios per SD of each frozen risk score in the two external cohorts. Blue/red: classifiers trained on the binary endpoint. Grey: survival-trained XGBoost-Cox models (Section 3.6).</figcaption>
+</figure>
+
+<figure class="half">
+<img src="figures/fig_external_km.png" alt="External KM">
+<figcaption><b>Figure 6.</b> Disease-free survival of all 226 Stage I–III GSE14333 patients split at the median of the pre-specified linear SVM risk score.</figcaption>
+</figure>
+
+<h3>3.6 Survival-trained model</h3>
+<p>XGBoost-Cox trained on all 485 Stage I–III discovery tumours achieved a nested-CV C-index of 0.587 (gene-only) and 0.599 (with stage), versus 0.619 for stage, but added information to stage (HR per SD 1.24, 95% CI 1.05–1.48; likelihood-ratio p = 0.013). Externally it added to stage in GSE14333 (HR 1.51, p = 0.004) but not in GSE17536 (HR 1.02, p = 0.91) (Table 6; Figure 7). Its selected genes were dominated by proliferation and DNA-replication genes (e.g. <i>MCM6</i>, <i>CDC6</i>, <i>RFC5</i>, <i>STIL</i>). Thus the classifiers trained on clear-cut early-relapse versus long-term disease-free tumours transferred more consistently than the model trained on all follow-up times.</p>
+
+<div class="tblock"><p class="tcap"><b>Table 6.</b> XGBoost-Cox survival model.</p>
+<table>
+<tr><th>Cohort</th><th>Model</th><th>C-index (95% CI)</th><th>Stage-adjusted HR per SD (95% CI)</th><th>LR test p vs stage</th></tr>
+<tr class="base"><td>GSE39582 nested CV (n = 485, 137 events)</td><td>Stage only</td><td>0.619 (0.577–0.659)</td><td>—</td><td>—</td></tr>
+<tr><td></td><td>XGB-Cox genes</td><td>0.587 (0.540–0.635)</td><td>1.24 (1.05–1.48)</td><td>0.013</td></tr>
+<tr><td></td><td>XGB-Cox genes + stage</td><td>0.599 (0.552–0.647)</td><td>1.24 (1.04–1.48)</td><td>0.017</td></tr>
+<tr class="base"><td>GSE14333 (n = 226, 50 events)</td><td>Stage only</td><td>0.675 (0.611–0.744)</td><td>—</td><td>—</td></tr>
+<tr><td></td><td>XGB-Cox genes</td><td>0.597 (0.511–0.680)</td><td>1.51 (1.14–2.00)</td><td>0.005</td></tr>
+<tr><td></td><td>XGB-Cox genes + stage</td><td>0.616 (0.537–0.689)</td><td>1.30 (0.98–1.72)</td><td>0.072</td></tr>
+<tr class="base"><td>GSE17536 (n = 135, 32 events)</td><td>Stage only</td><td>0.657 (0.566–0.737)</td><td>—</td><td>—</td></tr>
+<tr><td></td><td>XGB-Cox genes</td><td>0.511 (0.418–0.610)</td><td>1.02 (0.71–1.47)</td><td>0.91</td></tr>
+<tr><td></td><td>XGB-Cox genes + stage</td><td>0.555 (0.445–0.659)</td><td>1.05 (0.73–1.53)</td><td>0.78</td></tr>
+</table></div>
+
+<figure>
+<img src="figures/fig_survival_model_km.png" alt="Survival model KM">
+<figcaption><b>Figure 7.</b> Kaplan–Meier curves for the gene-only XGBoost-Cox score: discovery out-of-fold median split, and the frozen discovery-median cut-off in GSE14333 and GSE17536.</figcaption>
+</figure>
+
+<h3>3.7 Leave-one-cohort-out and TCGA</h3>
+<p>Under the curated endpoint the four GPL570 cohorts contributed 356 patients (GSE39582 249, GSE14333 64, GSE17536 41, GSE17537 2; 78 events). Pooled LOCO AUC was 0.623–0.663 versus 0.680 for stage (DeLong p ≥ 0.22). Per held-out cohort, models scored 0.59–0.62 in GSE39582 (stage 0.63), 0.75–0.86 in GSE14333 (stage 0.77) and 0.89–0.95 in GSE17536 (stage 0.79; only 7 events) (Figure 8). In TCGA only 57 patients met the curated endpoint; models scored 0.40–0.43 versus 0.635 for stage. Below-chance cross-validated AUC is a known small-sample artefact of selecting from tens of thousands of noisy features and indicates no detectable signal.</p>
+<figure class="half">
+<img src="figures/fig_loco_roc.png" alt="LOCO ROC">
+<figcaption><b>Figure 8.</b> Pooled leave-one-cohort-out ROC curves (n = 356) with the stage-only baseline.</figcaption>
+</figure>
+
+<h3>3.8 Paired liver metastases (GSE50760)</h3>
+<p>Hepatocyte-marker expression averaged 1.1 log<sub>2</sub> FPKM in primaries and 7.6 in metastases; 15 of 18 metastasis samples carried a strong liver signal and three almost none. Unadjusted paired tests found 700 genes at FDR &lt; 0.05, with top enriched pathways (complement/coagulation, bile secretion, cytochrome P450 metabolism) characteristic of normal liver. After liver adjustment, no gene remained significant (lowest FDR ≈ 1.0, also among the 13,131 expressed genes), and no recurrence candidate overlapped an adjusted-significant metastasis gene. Principal-component separation of metastases (Figure 9) therefore largely reflects tissue admixture.</p>
+<figure class="half">
+<img src="figures/fig_metastasis_pca.png" alt="Metastasis PCA">
+<figcaption><b>Figure 9.</b> PCA of GSE50760 normal colon, primary tumour and liver metastasis samples; the metastasis axis is dominated by normal-liver signal.</figcaption>
+</figure>
+
+<h2>4. Discussion</h2>
+<h3>4.1 Principal findings</h3>
+<p>Evaluated with tuning, selection and thresholds confined to training folds, gene-expression classifiers did not discriminate early recurrence better than TNM stage, internally or externally. Yet their risk scores were consistently prognostic after adjustment for stage across two independent cohorts, with similar effect sizes (HR ≈ 1.3–1.6 per SD) across four algorithms and two model forms. The most defensible conclusion is therefore that tumour expression contains prognostic information complementary to stage, but not enough on its own to classify individual patients reliably.</p>
+<p>The apparent contrast between near-chance internal AUC and positive external survival results has several plausible explanations: the internal binary analysis has only 56 events, so its estimates are imprecise; the survival analyses use all Stage I–III patients and the full follow-up, which provides more information; and the external cohorts may have a stronger stage–outcome relationship. These findings should not be over-interpreted until a single pre-specified model is confirmed in a further cohort.</p>
+
+<h3>4.2 Methodological lessons</h3>
+<div class="box small">
+<ol>
+<li><b>Hidden non-tumour samples.</b> 15 of the original 264 "patients" were normal mucosa linked to tumours from the same individuals; 14 were labelled disease-free. Series-level metadata fields such as <code>dataset</code> must be inspected before modelling.</li>
+<li><b>Optimism from untested tuning.</b> Moving hyperparameter choice inside folds reduced internal AUC from 0.53–0.59 to 0.51–0.54.</li>
+<li><b>Missing clinical baseline.</b> Without a stage-only comparator, an external AUC of 0.74 looks promising; with it, the same figure shows no gain.</li>
+<li><b>Cross-cohort normalisation shift.</b> Separately normalised GEO series require label-free alignment; otherwise frozen models default to the majority class.</li>
+<li><b>Endpoint drift in pooled analyses.</b> Pooling with an "any recurrence" endpoint inflated an earlier mega-cohort AUC (0.66 on n = 885) through label change rather than sample size.</li>
+<li><b>Tissue admixture.</b> Metastasis biopsies contain host-organ tissue; unadjusted comparisons rediscover liver biology.</li>
+<li><b>Never substitute results.</b> An earlier code path wrote a fixed pathway table when an enrichment web service was unreachable; such fallbacks must fail loudly instead.</li>
+</ol>
+</div>
+
+<h3>4.3 Limitations</h3>
+<p>The data are retrospective and heterogeneous in treatment; adjuvant chemotherapy was not modelled. The external binary cohort has 15 events, so AUC intervals span roughly ±0.13. Eight classifier variants were tested in two cohorts without formal multiplicity correction; the evidence lies in the consistency across models and cohorts rather than in any single p-value. Hyperparameter grids were small to fit a laptop budget. The extreme-phenotype endpoint excludes about half of eligible patients, which limits clinical applicability. Gene selection was unstable, and SHAP-based rankings from a model with internal AUC ≈ 0.54 are exploratory. The liver-adjustment model in GSE50760 is linear and based on 18 pairs. TCGA could not be used meaningfully under the curated endpoint.</p>
+
+<h3>4.4 Future work</h3>
+<p>(i) Pre-specify one model (for example, the linear SVM with stage) and validate it in an additional cohort with long follow-up; (ii) evaluate the score within Stage II and Stage III separately and against established molecular factors such as mismatch-repair status; (iii) assess clinical utility with decision-curve analysis; (iv) re-analyse metastasis data with deconvolution of tissue composition and count-based models.</p>
+
+<h2>5. Conclusion</h2>
+<p>Machine-learning models built on primary-tumour gene expression did not outperform TNM stage for classifying early recurrence in Stage I–III colorectal cancer once evaluated without information leakage. Their risk scores nevertheless predicted disease-free survival beyond stage in two independent cohorts, suggesting a reproducible, complementary prognostic signal. Careful data curation, a clinical baseline and external validation were essential to reach these conclusions.</p>
+
+<h2>Data availability</h2>
+<p>All datasets are public; direct download links are given in Table 1. GEO series pages: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE39582">GSE39582</a>, <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE14333">GSE14333</a>, <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE17536">GSE17536</a>, <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE17537">GSE17537</a>, <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE50760">GSE50760</a>; platform <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570">GPL570</a>. TCGA-COAD/READ via the UCSC Xena browser: <a href="https://xenabrowser.net/datapages/?cohort=TCGA%20Colon%20Cancer%20(COAD)">TCGA Colon Cancer (COAD)</a> and <a href="https://xenabrowser.net/datapages/?cohort=TCGA%20Rectal%20Cancer%20(READ)">TCGA Rectal Cancer (READ)</a>.</p>
+
+<h2>Code availability</h2>
+<p>Source code, results tables, figure scripts and the Streamlit dashboard: <a href="https://github.com/divyanshu15/CRC-ML-Model">https://github.com/divyanshu15/CRC-ML-Model</a>. The full pipeline is run with <code>clinical_labels.py → preprocessing.py → feature_selection.py → model_training.py → evaluation.py → megacohort_pipeline.py → external_validation.py → survival_model.py → metastasis_analysis.py</code> (see README).</p>
+
+<h2>Declarations</h2>
+<p class="small"><b>Ethics:</b> secondary analysis of de-identified public data; no new human-subject data were collected. <b>Funding:</b> [to be completed]. <b>Competing interests:</b> none declared. <b>Acknowledgements:</b> [to be completed]. <b>Clinical use:</b> this is a research study and not a validated clinical decision tool.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>Marisa L, de Reyniès A, Duval A, et al. Gene expression classification of colon cancer into molecular subtypes: characterization, validation, and prognostic value. <i>PLoS Med.</i> 2013;10(5):e1001453.</li>
+<li>Jorissen RN, Gibbs P, Christie M, et al. Metastasis-associated gene expression changes predict poor outcomes in patients with Dukes stage B and C colorectal cancer. <i>Clin Cancer Res.</i> 2009;15(24):7642–7651.</li>
+<li>Smith JJ, Deane NG, Wu F, et al. Experimentally derived metastasis gene expression profile predicts recurrence and death in patients with colon cancer. <i>Gastroenterology.</i> 2010;138(3):958–968.</li>
+<li>Kim SK, Kim SY, Kim JH, et al. A nineteen gene-based risk score classifier predicts prognosis of colorectal cancer patients. <i>Mol Oncol.</i> 2014;8(8):1653–1666.</li>
+<li>Liu J, Lichtenberg T, Hoadley KA, et al. An integrated TCGA pan-cancer clinical data resource to drive high-quality survival outcome analytics. <i>Cell.</i> 2018;173(2):400–416.</li>
+<li>The Cancer Genome Atlas Network. Comprehensive molecular characterization of human colon and rectal cancer. <i>Nature.</i> 2012;487(7407):330–337.</li>
+<li>Goldman MJ, Craft B, Hastie M, et al. Visualizing and interpreting cancer genomics data via the Xena platform. <i>Nat Biotechnol.</i> 2020;38(6):675–678.</li>
+<li>Edgar R, Domrachev M, Lash AE. Gene Expression Omnibus: NCBI gene expression and hybridization array data repository. <i>Nucleic Acids Res.</i> 2002;30(1):207–210.</li>
+<li>Breiman L. Random forests. <i>Mach Learn.</i> 2001;45(1):5–32.</li>
+<li>Cortes C, Vapnik V. Support-vector networks. <i>Mach Learn.</i> 1995;20(3):273–297.</li>
+<li>Chen T, Guestrin C. XGBoost: a scalable tree boosting system. In: <i>Proc. 22nd ACM SIGKDD Int. Conf. Knowledge Discovery and Data Mining.</i> 2016:785–794.</li>
+<li>Pedregosa F, Varoquaux G, Gramfort A, et al. Scikit-learn: machine learning in Python. <i>J Mach Learn Res.</i> 2011;12:2825–2830.</li>
+<li>DeLong ER, DeLong DM, Clarke-Pearson DL. Comparing the areas under two or more correlated receiver operating characteristic curves: a nonparametric approach. <i>Biometrics.</i> 1988;44(3):837–845.</li>
+<li>Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. <i>J R Stat Soc B.</i> 1995;57(1):289–300.</li>
+<li>Harrell FE, Califf RM, Pryor DB, Lee KL, Rosati RA. Evaluating the yield of medical tests. <i>JAMA.</i> 1982;247(18):2543–2546.</li>
+<li>Youden WJ. Index for rating diagnostic tests. <i>Cancer.</i> 1950;3(1):32–35.</li>
+<li>Varma S, Simon R. Bias in error estimation when using cross-validation for model selection. <i>BMC Bioinformatics.</i> 2006;7:91.</li>
+<li>Ambroise C, McLachlan GJ. Selection bias in gene extraction on the basis of microarray gene-expression data. <i>Proc Natl Acad Sci USA.</i> 2002;99(10):6562–6566.</li>
+<li>Lundberg SM, Lee S-I. A unified approach to interpreting model predictions. In: <i>Advances in Neural Information Processing Systems 30.</i> 2017.</li>
+<li>Davidson-Pilon C. lifelines: survival analysis in Python. <i>J Open Source Softw.</i> 2019;4(40):1317.</li>
+<li>Cox DR. Regression models and life-tables. <i>J R Stat Soc B.</i> 1972;34(2):187–220.</li>
+<li>Therneau TM, Grambsch PM, Fleming TR. Martingale-based residuals for survival models. <i>Biometrika.</i> 1990;77(1):147–160.</li>
+<li>Sung H, Ferlay J, Siegel RL, et al. Global cancer statistics 2020: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries. <i>CA Cancer J Clin.</i> 2021;71(3):209–249.</li>
+<li>Gray RG, Quirke P, Handley K, et al. Validation study of a quantitative multigene reverse transcriptase–polymerase chain reaction assay for assessment of recurrence risk in patients with stage II colon cancer. <i>J Clin Oncol.</i> 2011;29(35):4611–4619.</li>
+<li>Salazar R, Roepman P, Capella G, et al. Gene expression signature to improve prognosis prediction of stage II and III colorectal cancer. <i>J Clin Oncol.</i> 2011;29(1):17–24.</li>
+</ol>
+
+</body>
+</html>
